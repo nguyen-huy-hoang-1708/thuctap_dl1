@@ -1,0 +1,219 @@
+@use "./variable.scss" as *; /*as * để dùng đc tất cả các biến trong file variable.scss*/
+@use "./mixin.scss" as *; /*as * để dùng đc tất cả các biến trong file mixin.scss*/
+html, body {
+  margin: 0;
+  font-family: "Lexend";
+  padding: 0;
+  height: 100vh;
+  flex-direction: column;
+}
+body {	
+	background-image: url("Frame.PNG");
+	background-size: cover;
+	background-repeat: no-repeat;
+	background-position: center center;
+	background-attachment: fixed; /* tuỳ chọn: ảnh đứng yên khi cuộn */
+}
+.container {
+	display: flex;
+	flex-direction: column;
+	align-items: flex-start;
+	padding: 1vh;
+	position: relative;
+	flex-direction: column;
+	min-height: 100vh; 
+}
+header {
+	width: 40vh;
+	height: 3vh;
+	margin-top: 6.2vh;
+	margin-left: 10vh;
+	display: flex;
+	align-items: center;
+}
+.logo {
+	height: 4.1vh;
+	width: 4.1vh;
+}
+.company-name {
+	font-family: Lexend;
+	font-weight: 2vh;
+	font-size: 2vh;
+	line-height: 2vh;
+	letter-spacing: 0vh;
+	vertical-align: middle;
+	color: #607D8B;
+    margin-left: 1vh;
+}
+.login-box {
+	width: auto;
+	height: auto;
+	margin-left: 38%;
+	margin-top: 30vh;
+	gap: 4vh;
+	display: flex;
+	flex-direction: column; /* Các phần tử sẽ xếp theo chiều dọc */
+	& h2 {
+		text-align: left;
+		width: 100%;
+		font-family: Lexend;
+		font-weight: 5vh;
+		font-size: 4vh;
+		line-height: 100%;
+		letter-spacing: 0%;
+		vertical-align: middle;
+		color: $mau_xam;
+		margin-bottom: 2vh; 
+	}
+	& h3 {
+		width: 100%;
+		font-family: Lexend;
+		font-weight: 600;
+		font-size: 2.5vh;
+		line-height: 100%;
+		letter-spacing: 0%;
+		vertical-align: middle;
+		color: $mau_xam;
+        margin-top: 1.5vh;
+        margin-bottom: 3.5vh;
+	}
+}
+form {
+	display: flex;
+	flex-direction: column;
+}
+input[type="text"], input[type="password"] {
+	width: 50vh;
+	height: 4.9vh;
+	gap: 1vh;
+	border-radius: 1vh;
+	border: 0.1vh solid #78909C;
+	margin-bottom: 1.5vh;
+	background: #FFFFFF;
+	color: #78909C;
+	box-sizing: border-box;
+    font-size:3vh;
+}
+
+.remember {
+	width: 50vh;
+	height: 6vh;
+	font-family: Lexend;
+	font-weight: 4vh;
+	font-size: 3vh;
+	line-height: 4vh;
+	letter-spacing: 0vh;
+	vertical-align: middle;
+	color: #78909C;
+	margin-bottom: 0vh;
+	display: flex;
+	align-items: center;
+	gap: 1vh;
+}
+
+.remember input[type="checkbox"] {
+	width: 5vh;
+	height: 5vh;
+	margin-left: 0vh;
+	border-radius: 1vh;
+	outline: none;
+    border: 0.1vh solid #78909C;
+    box-shadow: none;
+}
+
+
+button {
+	font-family: "Lexend";
+	font-size: 2vh;
+    margin-top: 2vh;
+	color: #FFFFFF;
+	background-color: $nen_xanh;
+	width: 50vh;
+	height: 6.5vh;
+	margin-bottom: 3vh;
+	margin-top: 5vh;
+	animation-duration: 0ms;
+	border: none;
+	border-radius: 1vh;
+	&:hover {
+		background-color: $nen_xanh;
+	}
+}
+.footer-note {
+	width: 100%;
+	height: 2vh;
+	margin-top: 45vh;
+	color: $mau_xam;
+	text-align: center;
+	font-family: Lexend;
+	font-weight: 0vh;
+	font-size: 2vh;
+	line-height: normal;
+	letter-spacing: 0vh;
+}
+.input-wrapper {
+	position: relative;
+	margin-bottom: 4vh;
+	width: 100%;
+	display: flex;
+	& i {
+		position: absolute;
+		top: 30vh;
+		left: 1vh;
+		transform: translateY(-50%);
+		color: #999;
+	}
+	& input {
+		padding-left: 6vh;
+		height: 7vh;
+		width: 100%;;
+		box-sizing: border-box;
+	}
+}
+
+
+@mixin icon($icon) {
+    position: absolute;
+	width: 2.5vh;
+	height: 2.5vh;
+	transform: translateX(2vh);
+	margin-bottom: 3vh;
+    margin-left: 1vh;
+    margin-top: 2vh;
+}
+
+
+.icon-login {
+	@include icon("login"); // Use the icon mixin for login icon
+}
+.icon-password {
+	@include icon("password"); // Use the icon mixin for password icon
+}
+
+@include maxWidth(999999999px) {
+    .body {
+      height: 100%;
+	  width: 100%;
+    }
+  }
+
+  @include minWidth(50px) {
+    .body {
+        height: 100%;
+	  width: 100%;
+    }
+  }
+
+  @include maxHeight(999999999px) {
+    .body {
+        height: 100%;
+        width: 100%;
+    }
+  }
+  
+  @include minHeight(50px) {
+    .body {
+        height: 100%;
+        width: 100%;
+    }
+  }

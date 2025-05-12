@@ -1,0 +1,10 @@
+@mixin icon($icon) {
+    position: absolute;
+	width: 16px;
+	height: 16px;
+	transform: translateX(60%);
+	bottom: 25px;
+	z-index: 10;
+}
+$mau_xam: #546E7A;
+$nen_xanh: #4294F6;
