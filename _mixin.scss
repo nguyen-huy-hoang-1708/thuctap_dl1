@@ -1,23 +1,7 @@
-@mixin maxWidth($width) {
-  @media screen and (max-width: $width) {
+
+
+@mixin screen($breakpoint) {
+  @media (max-width: $breakpoint) {
     @content;
   }
-}
-
-@mixin minWidth($width) {
-    @media screen and (min-width: $width) {
-      @content;
-    }
-}
-
-@mixin minHeight($height) {
-    @media screen and (min-height: $height) {
-      @content;
-    }
-}
-
-@mixin maxHeight($height) {
-    @media screen and (max-height: $height) {
-      @content;
-    }
 }

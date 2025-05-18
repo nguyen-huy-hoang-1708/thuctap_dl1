@@ -1,11 +1,25 @@
 @use "./variable.scss" as *; /*as * để dùng đc tất cả các biến trong file variable.scss*/
 @use "./mixin.scss" as *; /*as * để dùng đc tất cả các biến trong file mixin.scss*/
+
+
 html, body {
-  margin: 0;
-  font-family: "Lexend";
-  padding: 0;
-  height: 100vh;
-  flex-direction: column;
+ max-width: 1920px;
+ max-height: 975px;
+ height: 100%;
+ width: 100%;
+ display: flex;
+ flex-direction: column;
+ padding-right: 0;
+ overflow-x: hidden;
+ @include screen(1199px)
+ {
+	height: auto;
+	//zoom:0.5;
+ }
+ @include screen(767px)
+ {
+	height: auto;
+ }
 }
 body {	
 	background-image: url("Frame.PNG");
@@ -15,205 +29,309 @@ body {
 	background-attachment: fixed; /* tuỳ chọn: ảnh đứng yên khi cuộn */
 }
 .container {
+	width: 100%;
+	flex: 1;
+	min-height: 100vh;
 	display: flex;
 	flex-direction: column;
 	align-items: flex-start;
-	padding: 1vh;
 	position: relative;
 	flex-direction: column;
-	min-height: 100vh; 
 }
 header {
-	width: 40vh;
-	height: 3vh;
-	margin-top: 6.2vh;
-	margin-left: 10vh;
 	display: flex;
 	align-items: center;
+	max-width: 385px;
+    max-height: 28px;
+    margin-top: 61px;
+    margin-left: 160.21px;
+@include screen(1199px)
+{
+	margin-left: 1%;
+	margin-top: 1%;
+}
+@include screen(767px)
+{
+	margin-left: 1%;
+	margin-top: 1%;
+}
+
 }
 .logo {
-	height: 4.1vh;
-	width: 4.1vh;
+	width: 61.973331451416016px;
+    height: 56px;
+    top: 46px;
+    left: 90px;
 }
 .company-name {
 	font-family: Lexend;
-	font-weight: 2vh;
-	font-size: 2vh;
-	line-height: 2vh;
-	letter-spacing: 0vh;
+	font-weight: 600;
+	font-size: 22px;
+	line-height: 100%;
+	letter-spacing: 0%;
 	vertical-align: middle;
 	color: #607D8B;
-    margin-left: 1vh;
+	margin-left: 5px;
+	white-space: nowrap; /* Không xuống dòng */
 }
 .login-box {
-	width: auto;
-	height: auto;
-	margin-left: 38%;
-	margin-top: 30vh;
-	gap: 4vh;
+	max-width: 480px;
+	max-height: 408px;
+    margin-left: 720px;
+    margin-top: 195px;
+    margin-right: 720px;
+	gap: 40px;
 	display: flex;
 	flex-direction: column; /* Các phần tử sẽ xếp theo chiều dọc */
 	& h2 {
 		text-align: left;
-		width: 100%;
-		font-family: Lexend;
-		font-weight: 5vh;
-		font-size: 4vh;
-		line-height: 100%;
-		letter-spacing: 0%;
-		vertical-align: middle;
-		color: $mau_xam;
-		margin-bottom: 2vh; 
-	}
-	& h3 {
-		width: 100%;
+		max-width: 225px;
+		max-height: 44px;
 		font-family: Lexend;
 		font-weight: 600;
-		font-size: 2.5vh;
+		font-size: 35px;
 		line-height: 100%;
 		letter-spacing: 0%;
 		vertical-align: middle;
 		color: $mau_xam;
-        margin-top: 1.5vh;
-        margin-bottom: 3.5vh;
+		@include screen(1199px)
+		{
+			width: 100%;
+		}
+		@include screen(767px)
+		{
+			width: 100%;
+		}
+	}
+	& h3 {
+		max-width: 127px;
+		max-height: 28px;
+		font-family: Lexend;
+		font-weight: 600;
+		font-size: 22px;
+		line-height: 100%;
+		letter-spacing: 0%;
+		vertical-align: middle;
+		color: $mau_xam;
+		@include screen(1199px)
+		{
+			width: 100%;
+		}
+		@include screen(767px)
+		{
+			width: 100%;
+		}
+	}
+	@include screen(1920px)
+	{
+		margin-left:35vw;
+		margin-top:30vh;
+		margin-bottom: 30vh;
+		width: 90%;             
+        padding: 20px;            
+        margin: 20px auto;       
+        box-shadow: none; 
+	}
+
+	@include screen(1199px)
+	{
+		margin-left:35vw;
+		margin-top:30vh;
+		margin-bottom: 30vh;
+		width: 90%;             
+    padding: 20px;            
+    margin: 20px auto;       
+    box-shadow: none; 
+	}
+	@include screen(767px)
+	{
+		margin-left:35vw;
+		margin-top:30vh;
+		margin-bottom: 30vh;
+		width: 90%;             
+        padding: 20px;            
+        margin: 20px auto;       
+        box-shadow: none;        
 	}
 }
 form {
 	display: flex;
 	flex-direction: column;
+	max-width: 480px;
+	max-height: 324px;
+	gap:32px;
 }
 input[type="text"], input[type="password"] {
-	width: 50vh;
-	height: 4.9vh;
-	gap: 1vh;
-	border-radius: 1vh;
-	border: 0.1vh solid #78909C;
-	margin-bottom: 1.5vh;
-	background: #FFFFFF;
+	width: 100%;
+	max-width: 432px;
+	max-height: 20px;
+	font-family: lexend;
+	font-weight: 400;
+	font-size: 16px;
+	line-height: 100%;
+	letter-spacing: 0%;
 	color: #78909C;
 	box-sizing: border-box;
-    font-size:3vh;
+	border-color: #78909C;
+	@include screen(767px)
+	{
+		width: 100%;
+		margin-left: 0px;
+
+	}
 }
 
 .remember {
-	width: 50vh;
-	height: 6vh;
-	font-family: Lexend;
-	font-weight: 4vh;
-	font-size: 3vh;
-	line-height: 4vh;
-	letter-spacing: 0vh;
-	vertical-align: middle;
-	color: #78909C;
-	margin-bottom: 0vh;
 	display: flex;
 	align-items: center;
-	gap: 1vh;
+	max-width: 178px;
+    max-height: 24px;
+    border-radius: 6px;
+    gap:15px;
+    margin-left: -5px;
+    color: #78909C;
 }
 
-.remember input[type="checkbox"] {
-	width: 5vh;
-	height: 5vh;
-	margin-left: 0vh;
-	border-radius: 1vh;
-	outline: none;
-    border: 0.1vh solid #78909C;
-    box-shadow: none;
+
+.remember input {
+	min-width: 24px;
+    min-height: 24px;
+    top: 220px;
+    border-radius: 6px;
+    border-width: 1.5px;
 }
 
+
+button[type="submit"] {
+	max-width: 89px;
+    max-height: 20px;
+    top: 290px;
+    left: 196px;
+    font-family: Lexend;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 100%;
+    letter-spacing: 0%;
+    vertical-align: middle;
+    color: #FFFFFF;
+}
 
 button {
-	font-family: "Lexend";
-	font-size: 2vh;
-    margin-top: 2vh;
-	color: #FFFFFF;
+	min-width: 480px;
+    min-height: 48px;
+    gap: 32px;
 	background-color: $nen_xanh;
-	width: 50vh;
-	height: 6.5vh;
-	margin-bottom: 3vh;
-	margin-top: 5vh;
-	animation-duration: 0ms;
+	border-radius: 6px;
 	border: none;
-	border-radius: 1vh;
-	&:hover {
-		background-color: $nen_xanh;
-	}
 }
 .footer-note {
 	width: 100%;
-	height: 2vh;
-	margin-top: 45vh;
-	color: $mau_xam;
-	text-align: center;
-	font-family: Lexend;
-	font-weight: 0vh;
-	font-size: 2vh;
-	line-height: normal;
-	letter-spacing: 0vh;
-}
-.input-wrapper {
-	position: relative;
-	margin-bottom: 4vh;
-	width: 100%;
 	display: flex;
-	& i {
-		position: absolute;
-		top: 30vh;
-		left: 1vh;
-		transform: translateY(-50%);
-		color: #999;
+    max-height: 15px;
+    margin-top: 250px;
+    margin-left: 677px;
+    align-items: center;
+    @include screen(1920px)
+	{
+		margin-left:35vw;
+		margin-top:30vh;
+		width: 100%;     
+		text-align: center;     
 	}
+	@include screen(1199px)
+	{
+		margin-left:28vw;
+		margin-top:30vh;
+		width: 40%; 
+		text-align: center;
+	}
+	@include screen(767px)
+	{
+		margin-left:28vw;
+		margin-top:30vh;
+		width: 35%; 
+		text-align: center;
+	}
+}
+
+.input-wrapper1 {
+	display: flex;
+	align-items: center;
+	position: relative;
+	min-width: 480px;
+	max-height: 48px;
+	gap:4px;
+	box-sizing: border-box;
+	background-color: transparent;
+	gap: 8px;
 	& input {
-		padding-left: 6vh;
-		height: 7vh;
-		width: 100%;;
-		box-sizing: border-box;
+		
+    flex: 1;
+    max-width: 480px;
+	max-height: 48px;
+    font-family: Lexend;
+    font-size: 16px;
+    color: #78909C;
+	gap: 8px;
+    border-radius: 8px;
+    border-width: 1.5px;
+    padding-top: 14px;
+    padding-bottom: 14px;
+    padding-left: 40px;
+	}
+
+	.icon-login {
+		position: absolute;
+	    max-width: 14px;
+	    max-height: 16px;
+	    padding-left: 15px;
+	}
+}
+
+.input-wrapper2 {
+	display: flex;
+	align-items: center;
+	position: relative;
+	max-width: 480px;
+	max-height: 48px;
+	gap:4px;
+	box-sizing: border-box;
+	background-color: transparent;
+	gap: 8px;
+	& input {
+		
+    flex: 1;
+    min-width: 480px;
+	max-height: 48px;
+    font-family: Lexend;
+    font-size: 16px;
+    color: #78909C;
+	gap: 8px;
+    border-radius: 8px;
+    border-width: 1.5px;
+    padding-top: 14px;
+    padding-bottom: 14px;
+    padding-left: 40px;
+	}
+
+	.icon-password {
+		position: absolute;
+	    max-width: 14px;
+	    max-height: 16px;
+	    padding-left: 15px;
 	}
 }
 
 
-@mixin icon($icon) {
-    position: absolute;
-	width: 2.5vh;
-	height: 2.5vh;
-	transform: translateX(2vh);
-	margin-bottom: 3vh;
-    margin-left: 1vh;
-    margin-top: 2vh;
+
+.footer-container {
+	font-family: Lexend;
+	display: flex;
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 100%;
+    letter-spacing: 0%;
+    color: $mau_xam;
 }
 
 
-.icon-login {
-	@include icon("login"); // Use the icon mixin for login icon
-}
-.icon-password {
-	@include icon("password"); // Use the icon mixin for password icon
-}
-
-@include maxWidth(999999999px) {
-    .body {
-      height: 100%;
-	  width: 100%;
-    }
-  }
-
-  @include minWidth(50px) {
-    .body {
-        height: 100%;
-	  width: 100%;
-    }
-  }
-
-  @include maxHeight(999999999px) {
-    .body {
-        height: 100%;
-        width: 100%;
-    }
-  }
-  
-  @include minHeight(50px) {
-    .body {
-        height: 100%;
-        width: 100%;
-    }
-  }
